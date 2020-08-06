@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>前端 - 前端导航网站</title>
     <style type="text/css">
@@ -20,53 +20,29 @@
 </head>
 
 <body>
-    <header class="globalHeader">
-        <form class="searchForm" method="get" action="https://www.baidu.com/s">
-            <input name="wd" type="text">
-            <button type="submit">搜索</button>
-        </form>
-    </header>
-    <main class="globalMain">
-        <ul class="siteList">
-            <!-- <li>
-                <a href="https://www.acfun.cn/">
-                    <div class="site">
-                        <div class="logo">A</div>
-                        <div class="link">acfun.cn</div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.bilibili.com/">
-                    <div class="site">
-                        <div class="logo">
-                            <img src="images/bilibili.jpg" alt="">
-                        </div>
-                        <div class="link">bilibili.com</div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <div class="site">
-                    <div class="logo">A</div>
-                    <div class="link">acfun.cn</div>
+<header class="globalHeader">
+    <form class="searchForm" method="get" action="https://www.baidu.com/s">
+        <input name="wd" type="text">
+        <button type="submit">搜索</button>
+    </form>
+</header>
+<main class="globalMain">
+    <ul class="siteList">
+        <li class="last">
+            <div class="addButton">
+                <div class="icon-Wrapper">
+                    <svg class="icon">
+                        <use xlink:href="#icon-add"></use>
+                    </svg>
                 </div>
-            </li> -->
-            <li class="last">
-                <div class="addButton">
-                    <div class="icon-Wrapper">
-                        <svg class="icon">
-                            <use xlink:href="#icon-add"></use>
-                        </svg>
-                    </div>
-                    <div class="text">新增网站</div>
-                </div>
-            </li>
-        </ul>
-    </main>
-    <script src="//at.alicdn.com/t/font_1986066_pmq7mrtk76.js"></script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="main.js"></script>
+                <div class="text">新增网站</div>
+            </div>
+        </li>
+    </ul>
+</main>
+<script src="//at.alicdn.com/t/font_1986066_pmq7mrtk76.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="main.js"></script>
 </body>
 
 </html>
