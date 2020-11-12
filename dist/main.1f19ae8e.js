@@ -120,7 +120,9 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 })({"main.js":[function(require,module,exports) {
 var $siteList = $(".siteList");
 var $lastList = $siteList.find("li.last");
-var $searchForm = $(".searchForm");
+var $searchForm = $(".searchForm")[0];
+var $input = $(".input")[0];
+var $se = $(".se");
 var listData = localStorage.getItem("listData");
 var dataObject = JSON.parse(listData);
 var hashMap = dataObject || [{
@@ -170,6 +172,32 @@ $(".addButton").on("click", function () {
   });
   render();
 });
+$se.on("click", function (e) {
+  $se.find("button.active")[0].classList.remove('active');
+  e.target.classList.add('active');
+
+  switch (e.target.innerText) {
+    case "谷歌":
+      $searchForm.action = "https://www.google.com/search";
+      $input.name = "q";
+      break;
+
+    case "百度":
+      $searchForm.action = "https://www.baidu.com/s";
+      $input.name = "wd";
+      break;
+
+    case "搜狗":
+      $searchForm.action = "https://www.sogou.com/web";
+      $input.name = "query";
+      break;
+
+    case "必应":
+      $searchForm.action = "https://cn.bing.com/search";
+      $input.name = "q";
+      break;
+  }
+});
 
 window.onbeforeunload = function () {
   var string = JSON.stringify(hashMap);
@@ -213,7 +241,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62296" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64053" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

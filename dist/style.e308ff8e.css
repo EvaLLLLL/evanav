@@ -35,6 +35,10 @@ button {
 	outline: none;
 }
 
+input {
+	outline: none;
+}
+
 .globalHeader {
 	margin: 20px;
 }

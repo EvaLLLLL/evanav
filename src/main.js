@@ -1,6 +1,8 @@
 const $siteList = $(".siteList");
 const $lastList = $siteList.find("li.last");
-const $searchForm = $(".searchForm")
+const $searchForm = $(".searchForm")[0]
+const $input = $(".input")[0]
+const $se = $(".se")
 const listData = localStorage.getItem("listData");
 const dataObject = JSON.parse(listData);
 const hashMap = dataObject || [
@@ -79,6 +81,29 @@ $(".addButton").on("click", () => {
 	});
 	render();
 });
+
+$se.on("click", (e)=> {
+	$se.find(`button.active`)[0].classList.remove('active')
+	e.target.classList.add('active')
+	switch (e.target.innerText){
+		case "谷歌":
+			$searchForm.action = "https://www.google.com/search"
+			$input.name = "q"
+			break
+		case "百度":
+			$searchForm.action = "https://www.baidu.com/s"
+			$input.name = "wd"
+			break
+		case "搜狗":
+			$searchForm.action = "https://www.sogou.com/web"
+			$input.name = "query"
+			break
+		case "必应":
+			$searchForm.action = "https://cn.bing.com/search"
+			$input.name = "q"
+			break
+	}
+})
 
 window.onbeforeunload = () => {
 	const string = JSON.stringify(hashMap);
