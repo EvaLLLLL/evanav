@@ -118,36 +118,36 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
-var $siteList = $(".siteList");
-var $lastList = $siteList.find("li.last");
-var $searchForm = $(".searchForm")[0];
-var $input = $(".input")[0];
-var $se = $(".se");
-var listData = localStorage.getItem("listData");
+var $siteList = $('.siteList');
+var $lastList = $siteList.find('li.last');
+var $searchForm = $('.searchForm')[0];
+var $input = $('.input')[0];
+var $se = $('.se');
+var listData = localStorage.getItem('listData');
 var dataObject = JSON.parse(listData);
 var hashMap = dataObject || [{
-  logo: "A",
-  url: "https://www.acfun.cn/"
+  logo: 'A',
+  url: 'https://www.acfun.cn/'
 }, {
-  logo: "B",
-  url: "https://www.bilibili.com/"
+  logo: 'B',
+  url: 'https://www.bilibili.com/'
 }, {
-  logo: "G",
-  url: "https://www.github.com/"
+  logo: 'G',
+  url: 'https://www.github.com/'
 }];
 
 var simplifyUrl = function simplifyUrl(url) {
-  return url.replace("https://", "").replace("http://", "").replace("www.", "").replace(/\/.*/, "");
+  return url.replace('https://', '').replace('http://', '').replace('www.', '').replace(/\/.*/, '');
 };
 
 var render = function render() {
-  $siteList.find("li:not(.last)").remove();
+  $siteList.find('li:not(.last)').remove();
   hashMap.forEach(function (node, index) {
     var $li = $("\n        <li>\n            <div class=\"site\">\n                <div class=\"logo\">".concat(node.logo, "</div>\n                <div class=\"link\">").concat(simplifyUrl(node.url), "</div>\n                <div class=\"close\">\n                    <svg class=\"icon\">\n                        <use xlink:href=\"#icon-close\"></use>\n                    </svg>\n            </div>\n            </div>\n    </li>\n        ")).insertBefore($lastList);
-    $li.on("click", function () {
+    $li.on('click', function () {
       window.open(node.url);
     });
-    $li.on("click", ".close", function (e) {
+    $li.on('click', '.close', function (e) {
       e.stopPropagation();
       hashMap.splice(index, 1);
       render();
@@ -159,11 +159,11 @@ hashMap.forEach(function (node) {
   var $li = $("\n    <li>\n        <a href=\"".concat(node.url, "\">\n            <div class=\"site\">\n                <div class=\"logo\">").concat(node.logo, "</div>\n                <div class=\"link\">").concat(node.url, "</div>\n            </div>\n        </a>\n    </li>\n")).insertBefore($lastList);
 });
 render();
-$(".addButton").on("click", function () {
-  var url = window.prompt("请问你要添加的网址是啥？");
+$('.addButton').on('click', function () {
+  var url = window.prompt('请问你要添加的网址是啥？');
 
-  if (url.indexOf("http") !== 0) {
-    url = "https://" + url;
+  if (url.indexOf('http') !== 0) {
+    url = 'https://' + url;
   }
 
   hashMap.push({
@@ -172,39 +172,47 @@ $(".addButton").on("click", function () {
   });
   render();
 });
-$se.on("click", function (e) {
-  $se.find("button.active")[0].classList.remove('active');
-  e.target.classList.add('active');
-
+$se.on('click', function (e) {
   switch (e.target.innerText) {
-    case "谷歌":
-      $searchForm.action = "https://www.google.com/search";
-      $input.name = "q";
+    case '谷歌':
+      $se.find("button.active")[0].classList.remove('active');
+      e.target.classList.add('active');
+      $searchForm.action = 'https://www.google.com/search';
+      $input.name = 'q';
       break;
 
-    case "百度":
-      $searchForm.action = "https://www.baidu.com/s";
-      $input.name = "wd";
+    case '百度':
+      $se.find("button.active")[0].classList.remove('active');
+      e.target.classList.add('active');
+      $searchForm.action = 'https://www.baidu.com/s';
+      $input.name = 'wd';
       break;
 
-    case "搜狗":
-      $searchForm.action = "https://www.sogou.com/web";
-      $input.name = "query";
+    case '搜狗':
+      $se.find("button.active")[0].classList.remove('active');
+      e.target.classList.add('active');
+      $searchForm.action = 'https://www.sogou.com/web';
+      $input.name = 'query';
       break;
 
-    case "必应":
-      $searchForm.action = "https://cn.bing.com/search";
-      $input.name = "q";
+    case '必应':
+      $se.find("button.active")[0].classList.remove('active');
+      e.target.classList.add('active');
+      $searchForm.action = 'https://cn.bing.com/search';
+      $input.name = 'q';
+      break;
+
+    default:
       break;
   }
 });
 
 window.onbeforeunload = function () {
   var string = JSON.stringify(hashMap);
-  localStorage.setItem("listData", string);
+  localStorage.setItem('listData', string);
 };
 
-$(document).on("keypress", function (e) {
+$(document).on('keypress', function (e) {
   var key = e.key;
 
   for (var i = 0; i < hashMap.length; i++) {

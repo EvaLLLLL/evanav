@@ -51,7 +51,10 @@ input {
 	font-size: 16px;
 	border: none;
 	background: none;
-	margin-left: 15px;
+	margin-left: 20px;
+}
+.globalHeader > .se > button:first-child {
+	margin-left: 5px;
 }
 .globalHeader > .se > .active {
 	color: #0382b9;
@@ -98,14 +101,14 @@ input {
 	height: 40px;
 	padding: 0 10px;
 	border: 1px solid #ddd;
-	border-radius: 20px;
+	border-radius: 10px;
 }
 
 .searchForm > button {
 	white-space: nowrap;
 	padding: 0 27px;
 	border: 1px solid #ddd;
-	border-radius: 20px;
+	border-radius: 10px;
 	background: #0282b9;
 	color: white;
 	font-size: 16px;
@@ -151,7 +154,7 @@ input {
 	align-items: center;
 	background-color: white;
 	margin-bottom: 10px;
-	border-radius: 4px;
+	border-radius: 20px;
 	padding: 20px 0;
 	position: relative;
 	cursor: pointer;
@@ -192,7 +195,7 @@ input {
 	flex-direction: column;
 	background-color: white;
 	margin-bottom: 10px;
-	border-radius: 4px;
+	border-radius: 20px;
 	padding: 5px 0;
 }
 
