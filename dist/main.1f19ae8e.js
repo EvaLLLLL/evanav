@@ -126,14 +126,26 @@ var $se = $('.se');
 var listData = localStorage.getItem('listData');
 var dataObject = JSON.parse(listData);
 var hashMap = dataObject || [{
-  logo: 'A',
-  url: 'https://www.acfun.cn/'
+  logo: 'G',
+  url: 'https://www.github.com/'
+}, {
+  logo: 'M',
+  url: 'https://developer.mozilla.org/'
+}, {
+  logo: 'V',
+  url: 'https://vue3js.cn/'
+}, {
+  logo: 'R',
+  url: 'https://reactjs.org/'
+}, {
+  logo: 'Y',
+  url: 'https://www.youtube.com/'
+}, {
+  logo: 'T',
+  url: 'https://twitter.com/'
 }, {
   logo: 'B',
   url: 'https://www.bilibili.com/'
-}, {
-  logo: 'G',
-  url: 'https://www.github.com/'
 }];
 
 var simplifyUrl = function simplifyUrl(url) {

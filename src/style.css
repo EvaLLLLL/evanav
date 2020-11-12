@@ -28,6 +28,8 @@ img {
 
 body {
 	background-color: #eee;
+	color: #444444;
+	font-family: -apple-system, "Noto Sans", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
 }
 
 button {
@@ -193,10 +195,11 @@ input {
 	justify-self: center;
 	align-items: center;
 	flex-direction: column;
-	background-color: white;
+	background-color: #d1d1d1;
 	margin-bottom: 10px;
 	border-radius: 20px;
 	padding: 5px 0;
+	cursor: pointer;
 }
 
 .siteList .addButton .icon {
