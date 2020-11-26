@@ -11,10 +11,6 @@ const hashMap = dataObject || [
 		url: 'https://www.github.com/',
 	},
 	{
-		logo: 'M',
-		url: 'https://developer.mozilla.org/',
-	},
-	{
 		logo: 'V',
 		url: 'https://vue3js.cn/'
 	},
@@ -25,10 +21,6 @@ const hashMap = dataObject || [
 	{
 		logo: 'Y',
 		url: 'https://www.youtube.com/'
-	},
-	{
-		logo: 'T',
-		url: 'https://twitter.com/'
 	},
 	{
 		logo: 'B',
